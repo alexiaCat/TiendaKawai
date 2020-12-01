@@ -1,0 +1,47 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container" >
+        <legend class="text-left header">Carrito de Compras</legend>
+    </div>
+    <hr class="my-1">
+</div>
+<div class="row">
+    <div class="col-8">
+        <div class="card mb-3" *ngFor= "let item of items">
+            <div class="row no-gutters">
+              <div class="col-md-2">
+                <br><br>
+                <a routerLink="../../products/detail/{{item._id}}"><img src="{{ item.imgUrl}}" class="card-img"></a> 
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h4 class="card-title text-muted">{{item.brand}}</h4>
+                  <p class="card-text">{{item.name}}</p>
+                  <p class="card-text">Precio: <strong>${{item.price}}</strong></p>
+                  <p class="card-text">Cantidad: <i class="fas fa-minus-circle" style="color: silver;"></i><strong>{{ item.cantidad }}</strong><i class="fas fa-plus-circle" style="color: silver;"></i></p>
+                </div>
+              </div>
+              <div class="col-md-1">
+                  <br><br><br>
+                <button (click)="deleteProduct(item._id)" id="bt2"><i class="far fa-trash-alt"></i></button>
+              </div>
+            </div>
+          </div> 
+    </div><!--col-8-->
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+              <h1 class="card-title">Resumen de tu orden</h1>
+              <p class="card-text" >Subtotal:</p>
+              <p class="card-text">Descuentos:</p>
+            </div>
+            <div class="card-body">
+            <div class="text-center">
+                <button type="button" class="btn btn-success">Ir a comprar</button>
+            </div></div>
+          </div>
+    </div>
+</div>
+
+
+
+    

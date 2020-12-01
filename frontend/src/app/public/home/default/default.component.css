@@ -1,0 +1,11 @@
+.jumbotron {
+    background-color:rgb(255, 187, 86);
+}
+.card{
+    background-color:rgb(16, 15, 15);
+}
+.card-title {
+    font-style: italic;
+    color:rgb(247, 255, 131);
+    font-size:35px;
+}

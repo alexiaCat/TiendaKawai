@@ -1,0 +1,11 @@
+<div  *ngFor="let producto of productos" class="card-group">
+  <div class="card border-secondary" style="width: 11rem;">
+    <a routerLink="../../products/detail/{{producto._id}}"><img src="{{producto.imgUrl}}" class="card-img-top" alt="..."></a>
+    <div class="card-body">
+      <h5 class="text-muted mb-1">{{producto.brand}}</h5>
+      <p class="text-sm-left">{{producto.name}}</p>
+      <p class="font-weight-bold">${{producto.price | currency: 'CLP'}}</p>
+      <button (click)="addtoCart(producto)"  type="button-md text-center" class="btn btn-warning fas fa-shopping-cart"> Agregar</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tiendakawai-13774": {
+      "hosting": {
+        "e-commerce": [
+          "tiendakawai-13774"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pwa-tiendakawai"
+  }
+}

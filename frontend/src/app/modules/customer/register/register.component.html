@@ -1,0 +1,136 @@
+<br>
+<legend class="text-center header">Formulario de registro</legend>
+<div id="register">
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form [formGroup]="fgValidator" id="login-form" class="form" (ngSubmit)="CustomerRegisterFn()">
+                        <h3 class="text-center text"></h3>
+                        <div class="form-group">
+                            <label for="document" class="text">Rut:</label><br>
+                            <input type="text" formControlName="document" placeholder="Ingrese su rut" name="document" id="document" class="form-control">
+                            <div class="warning-validator" *ngIf="fgv.document.errors && (fgv.document.dirty || fgv.document.touched)">
+                                <strong *ngIf="fgv.document.errors.required">
+                                    Este campo es requerido.
+                                </strong>
+                                <strong *ngIf="fgv.document.errors.minlength">
+                                    El formato para registro es XXXXXXX-X.
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="text">Nombre:</label><br>
+                            <input type="text" formControlName="name" placeholder="Ingrese su nombre" name="name" id="name" class="form-control">
+                            <div class="warning-validator" *ngIf="fgv.name.errors && (fgv.name.dirty || fgv.name.touched)">
+                                <strong *ngIf="fgv.name.errors.required">
+                                    Este campo es requerido.
+                                </strong>
+                                <strong *ngIf="fgv.name.errors.minlength">
+                                    Debe contener a lo menos 2 caracteres.
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname" class="text">Apellido:</label><br>
+                            <input type="text" formControlName="lastname" placeholder="Ingrese su apellido" name="lastname" id="lastname" class="form-control">
+                            <div class="warning-validator" *ngIf="fgv.lastname.errors && (fgv.lastname.dirty || fgv.lastname.touched)">
+                                <strong *ngIf="fgv.lastname.errors.required">
+                                    Este campo es requerido.
+                                </strong>
+                                <strong *ngIf="fgv.lastname.errors.minlength">
+                                    Debe contener a lo menos 2 caracteres.
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="text">Correo electrónico:</label><br>
+                            <input type="text" formControlName="email" placeholder="example@dominio.com" name="email" id="mail" class="form-control">
+                            <div class="warning-validator" *ngIf="fgv.email.errors && (fgv.email.dirty || fgv.email.touched)">
+                                <strong *ngIf="fgv.email.errors.required">
+                                    Este campo es requerido.
+                                </strong>
+                                <strong *ngIf="fgv.email.errors.email">
+                                    Ingrese formato correcto.
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text">Cree su contraseña:</label><br>
+                            <input type="password" formControlName="password" placeholder="Debe contener a lo menos 8 caracteres, 1 letra y 1 número" name="password" id="password" class="form-control">
+                            <div class="warning-validator" *ngIf="fgv.password.errors && (fgv.password.dirty || fgv.password.touched)">
+                                <strong *ngIf="fgv.password.errors.required">
+                                    La contraseña debe contener a lo menos 8 caracteres, 1 letra y 1 número.
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone" class="text">Número de Contacto:</label><br>
+                            <input type="number" formControlName="telephone" placeholder="Ingrese su número de contacto" name="telephone" id="telephone" class="form-control">
+                            <div class="warning-validator" *ngIf="fgv.telephone.errors && (fgv.telephone.dirty || fgv.telephone.touched)">
+                                <strong *ngIf="fgv.telephone.errors.required">
+                                    Este campo es requerido.
+                                </strong>
+                                <strong *ngIf="fgv.telephone.errors.minlength">
+                                    Debe contener a lo menos 9 números.
+                                </strong>
+                                <strong *ngIf="fgv.telephone.errors.maxlength">
+                                    Debe contener máximo 12 números.
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="text">Dirección:</label><br>
+                            <input formControlName="address" type="text" placeholder="Ingrese su dirección" name="address" id="address" class="form-control">
+                            <div class="warning-validator" *ngIf="fgv.address.errors && (fgv.address.dirty || fgv.address.touched)">
+                                <strong *ngIf="fgv.address.errors.required">
+                                    Este campo es requerido.
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address2" class="text">Segunda dirección: (*OPCIONAL)</label><br>
+                            <input formControlName="address2" type="text" placeholder="Ingrese su segunda dirección" name="address2" id="address2" class="form-control">
+                        </div>
+                            <div class="form-group">
+                              <label for="inputCity" class="text">Ciudad:</label>
+                              <input formControlName="inputCity" type="text" placeholder="Ingrese su ciudad" name="inputCity" class="form-control" id="inputCity">
+                              <div class="warning-validator" *ngIf="fgv.inputCity.errors && (fgv.inputCity.dirty || fgv.inputCity.touched)">
+                                <strong *ngIf="fgv.inputCity.errors.required">
+                                    Este campo es requerido.
+                                </strong>
+                            </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputState" class="text">Región:</label>
+                                <select formControlName="inputState" id="inputState" class="form-control">
+                                    <option selected>Región Metropolitana de Santiago</option>
+                                  <option>Región de Tarapacá</option>
+                                  <option>Región de Antofagasta</option>
+                                  <option>Región de Atacama</option>
+                                  <option>Región de Coquimbo</option>
+                                  <option>Región de Valparaíso</option>
+                                  <option>Región del Libertador Gral. Bernardo O'Higgins</option>
+                                  <option>Región del Maule</option>
+                                  <option>Región del Biobío</option>
+                                  <option>Región de la Araucanía</option>
+                                  <option>Región de Los Lagos</option>
+                                  <option>Región Aysén del General Carlos Ibáñez del Campo</option>
+                                  <option>Región de Magallanes y de la Antártica Chilena</option>
+                                  <option>Región de Los Ríos</option>
+                                  <option>Región de Arica y Parinacota</option>
+                                  <option>Región de Ñuble</option>
+                                  
+                                </select>
+                            </div>
+
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info btn-md">Registrarse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

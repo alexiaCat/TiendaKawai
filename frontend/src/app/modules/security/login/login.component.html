@@ -1,0 +1,47 @@
+<br><legend class="text-center header">Iniciar sesión</legend>
+<div id="login">
+  <div class="container mt-1">
+      <div id="login-row" class="row justify-content-center align-items-center">
+          <div id="login-column" class="col-md-6">
+              <div id="login-box" class="col-md-12">
+                  <form [formGroup]="fgValidator" id="login-form" class="login-form" (ngSubmit)="LoginCustomerFn()">
+                      <h3 class="text-center text-info"></h3>
+                      <div class="form-group">        
+                          <label for="email" class="text">Ingrese su correo electrónico:</label><br>
+                          <input formControlName="email" type="text" placeholder="example@dominio.com" name="email" id="email" class="form-control">
+                          <div class="warning-validator" *ngIf="fgv.email.errors && (fgv.email.dirty || fgv.email.touched)">
+                            <strong *ngIf="fgv.email.errors.required">
+                                Este campo es requerido.
+                            </strong>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="password" class="text">Contraseña:</label><br>
+                          <input formControlName="password" type="password" placeholder="Ingrese su contraseña" name="password" id="password" class="form-control">
+                          <div class="warning-validator" *ngIf="fgv.password.errors && (fgv.password.dirty || fgv.password.touched)">
+                            <strong>
+                                Este campo es requerido.
+                            </strong>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="remember-me" class="text"><span>Recordarme</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                        <button type="submit" class= "btn btn-info btn-md" >Acceder</button>
+                        <div class="form-group"><button (click)="onGoogleLogin()" class= "btn btn-info btn-google mt-1">Continuar con google</button></div>
+                        
+
+                    </div>
+                      <br><br>
+                      <div id="forgot-password" class="text">
+                        <a routerLink="/security/reset" class="text">Olvidé mi contraseña</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a routerLink="/customer/register" class="text"> Crear cuenta</a> 
+                    </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>

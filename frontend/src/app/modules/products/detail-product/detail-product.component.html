@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-3">
+        <div class="card" style="width: 14rem;">
+    <img class="card-img-top" src="{{producto.imgUrl}}" alt="Card image cap">
+    <div class="card-body">
+      <h2 class="card-title"><strong>{{producto.brand}}</strong></h2>
+      <p class="card-text">{{producto.name}}</p>
+      <button type="button" routerLink="/products/filter-list" class="btn btn-dark text-center">Volver</button>
+    </div>
+  </div>
+    </div>
+<div class="col-9">
+    <br><br>
+    <h1 class="text-center"><strong>Califica este producto:</strong> </h1>
+    <app-qualifier></app-qualifier>
+    <form>
+    <div class="form-group">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+      </div>
+    </form>
+    <button type="button" class="btn btn-info text-left">Enviar</button>
+</div>
+</div>
+
